@@ -15,6 +15,7 @@ app.config['MYSQL_DATABASE_PORT'] = 3306
 app.config['MYSQL_DATABASE_DB'] = 'mlbPlayersData'
 mysql.init_app(app)
 
+
 @app.route('/', methods=['GET'])
 def index():
     user = {'username': 'MLB Players Project'}
@@ -22,6 +23,7 @@ def index():
     cursor.execute('SELECT * FROM tblMlbPlayersImport')
     result = cursor.fetchall()
     return render_template('index.html', title='Home', user=user, players=result)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
