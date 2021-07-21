@@ -6,13 +6,13 @@ services:
     links:
       - db
     ports:
-      - "5000:5000"
+      - "5001:5000"
 
   db:
     image: mysql:5.7
     container_name: "MySQL_Database_2"
     ports:
-      - "32000:3306"
+      - "32001:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:
