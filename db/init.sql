@@ -1,4 +1,7 @@
-CREATE TABLE IF NOT EXISTS mlb_players_data (
+CREATE DATABASE mlbPlayersData;
+use mlbPlayersData;
+
+CREATE TABLE IF NOT EXISTS tblMlbPlayersImport (
     `fld_Name` VARCHAR(17) CHARACTER SET utf8,
     `fld_Team` VARCHAR(6) CHARACTER SET utf8,
     `fld_Position` VARCHAR(20) CHARACTER SET utf8,
@@ -6,7 +9,7 @@ CREATE TABLE IF NOT EXISTS mlb_players_data (
     `fld_Weight_lbs` INT,
     `fld_Age` NUMERIC(4, 2)
 );
-INSERT INTO mlb_players_data VALUES
+INSERT INTO tblMlbPlayersImport VALUES
     ('Adam Donachie','BAL','Catcher', 74, 180, 22.99),
     ('Paul Bako','BAL','Catcher', 74, 215, 34.69),
     ('Ramon Hernandez','BAL','Catcher', 72, 210, 30.78),
