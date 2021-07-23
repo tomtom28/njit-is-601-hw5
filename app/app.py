@@ -28,5 +28,16 @@ def index():
 def form_insert_get():
     return render_template('new.html', title='New City Form')
 
+@app.route('/players/new', methods=['POST'])
+def form_insert_post():
+    cursor = mysql.get_db().cursor()
+    inputData = (request.form.get('fldPlayerName'), request.form.get('fldTeamName'),
+                 request.form.get('fldPosition'), request.form.get('fldAge'),
+                 request.form.get('fldHeight'), request.form.get('fldWeight'))
+    sql_insert_query = """INSERT INTO tblMlbPlayersImport (fld_Name,fld_Team,fld_Position,fld_Age,fld_Height_inches,fld_Weight_lbs) VALUES (%s, %s,%s, %s,%s, %s) """
+    cursor.execute(sql_insert_query, inputData)
+    mysql.get_db().commit()
+    return redirect("/", code=302)
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

@@ -2,8 +2,8 @@ CREATE DATABASE mlbPlayersData;
 use mlbPlayersData;
 
 CREATE TABLE IF NOT EXISTS tblMlbPlayersImport (
-    `fld_Name` VARCHAR(17) CHARACTER SET utf8,
-    `fld_Team` VARCHAR(6) CHARACTER SET utf8,
+    `fld_Name` VARCHAR(30) CHARACTER SET utf8,
+    `fld_Team` VARCHAR(30) CHARACTER SET utf8,
     `fld_Position` VARCHAR(20) CHARACTER SET utf8,
     `fld_Height_inches` INT,
     `fld_Weight_lbs` INT,
