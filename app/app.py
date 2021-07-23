@@ -24,9 +24,11 @@ def index():
     result = cursor.fetchall()
     return render_template('index.html', title='Home', user=user, players=result)
 
+
 @app.route('/players/new', methods=['GET'])
 def form_insert_get():
     return render_template('new.html', title='New City Form')
+
 
 @app.route('/players/new', methods=['POST'])
 def form_insert_post():
@@ -38,6 +40,15 @@ def form_insert_post():
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
     return redirect("/", code=302)
+
+
+@app.route('/view/<int:player_id>', methods=['GET'])
+def record_view(player_id):
+    cursor = mysql.get_db().cursor()
+    cursor.execute('SELECT * FROM tblMlbPlayersImport WHERE id=%s', player_id)
+    result = cursor.fetchall()
+    return render_template('view.html', title='View Form', player=result[0])
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

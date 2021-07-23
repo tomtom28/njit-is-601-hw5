@@ -2,14 +2,16 @@ CREATE DATABASE mlbPlayersData;
 use mlbPlayersData;
 
 CREATE TABLE IF NOT EXISTS tblMlbPlayersImport (
+    `id` INT AUTO_INCREMENT,
     `fld_Name` VARCHAR(30) CHARACTER SET utf8,
     `fld_Team` VARCHAR(30) CHARACTER SET utf8,
     `fld_Position` VARCHAR(20) CHARACTER SET utf8,
     `fld_Height_inches` INT,
     `fld_Weight_lbs` INT,
-    `fld_Age` NUMERIC(4, 2)
+    `fld_Age` NUMERIC(4, 2),
+    PRIMARY KEY (`id`)
 );
-INSERT INTO tblMlbPlayersImport VALUES
+INSERT INTO tblMlbPlayersImport (fld_Name, fld_Team, fld_Position, fld_Height_inches, fld_Weight_lbs, fld_age) VALUES
     ('Adam Donachie','BAL','Catcher', 74, 180, 22.99),
     ('Paul Bako','BAL','Catcher', 74, 215, 34.69),
     ('Ramon Hernandez','BAL','Catcher', 72, 210, 30.78),
