@@ -80,5 +80,14 @@ def form_delete_post(player_id):
     return redirect("/", code=302)
 
 
+@app.route('/api/v1/players', methods=['GET'])
+def api_browse() -> str:
+    cursor = mysql.get_db().cursor()
+    cursor.execute('SELECT * FROM tblMlbPlayersImport')
+    result = cursor.fetchall()
+    json_result = json.dumps(result);
+    return Response(json_result, status=200, mimetype='application/json')
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
