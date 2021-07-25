@@ -8,8 +8,8 @@ It is a continuation of the previous assignment, where now HTML forms were creat
 The data was taken from [this](https://people.sc.fsu.edu/~jburkardt/data/csv/csv.html) csv source and converted to SQL statements using [this](https://sqlizer.io/#/) online tool.
 
 
-## Postman Screenshot
-![postman_request_output](screenshots/postman.png)
+## Homepage Screenshot
+![homepage_mlb_player](screenshots/homepage.png)
 
 
 ## MySQL Data Screenshot
